@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">МОДЕЛЬ</th>
+        <th scope="col">ЦВЕТ</th>
+        <th scope="col">ЦЕНА</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car: ${auto}">
+        <td th:text="${car.model}"/>
+        <td th:text="${car.color}"/>
+        <td th:text="${car.price}"/>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
