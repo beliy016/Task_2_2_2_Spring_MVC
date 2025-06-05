@@ -13,7 +13,7 @@ public class CarServImpl implements CarServ {
     private CarDAO dao;
 
     @Override
-    public List<Car> getCarsByCount(List<Car> list, int count) {
-        return dao.getCarsByCount(list, count);
+    public List<Car> getCarsByCount(int count) {
+        return dao.getCarsByCount(count);
     }
 }

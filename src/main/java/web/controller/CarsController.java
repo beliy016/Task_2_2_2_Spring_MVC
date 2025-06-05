@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import web.dao.CarDAOImpl;
 import web.service.CarServImpl;
 
 @Controller
@@ -14,12 +13,9 @@ public class CarsController {
     @Autowired
     private CarServImpl service;
 
-    @Autowired
-    private CarDAOImpl dao;
-
     @GetMapping(value = "/cars")
     public String showCars(@RequestParam(value="count", required = false, defaultValue = "5") Integer count, Model model) {
-        model.addAttribute("auto", service.getCarsByCount(dao.listCars, count));
+        model.addAttribute("auto", service.getCarsByCount(count));
         return "cars";
     }
 }
