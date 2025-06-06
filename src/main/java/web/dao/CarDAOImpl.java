@@ -18,6 +18,6 @@ public class CarDAOImpl implements CarDAO{
 
     @Override
     public List<Car> getCarsByCount(int count) {
-        return listCars.stream().limit(count).toList();
+        return count <= 0 ? listCars : listCars.stream().limit(count).toList();
     }
 }
